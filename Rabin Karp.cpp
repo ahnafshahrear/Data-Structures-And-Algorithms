@@ -7,8 +7,6 @@ using namespace std;
 // Description: Rabin karp algorithm
 // Time Complexity: O(m+n)
 
-#define pb push_back
-
 void rabinKarp(string text, string pattern)
 {
     const int base = 256, mod = 269;
