@@ -2,58 +2,78 @@
 
 using namespace std;
 
-// Author: Ahnaf Shahrear Khan
-// Date: 02.06.2k22
-// Description: Rabin karp algorithm
-// Time Complexity: O(m+n)
+typedef long long int int64;
+typedef unsigned long long uint64;
+typedef pair<uint64, uint64> uint64pair;
 
 #define pb push_back
 
-void rabinKarp(string text, string pattern)
+const uint64 inf = 1e17;
+uint64 vertex, edge;
+vector<vector<uint64pair>> adj(1e5 + 1);
+int source = 1;
+
+void dijkstra()
 {
-    const int base = 256, mod = 269;
-    int textSize = text.size(), patternSize = pattern.size();
-    int w = 1;
-    int textHash = 0, patternHash = 0;
+    priority_queue<uint64pair, vector<uint64pair>, greater<uint64pair>> pq;
+    vector<uint64> dist(1e5 + 1, inf), sources(1e5 + 1);
+    vector<bool> visited(1e5 + 1, false);
+    pq.push({0, source});
+    dist[source] = 0;
 
-    for (int i = 0; i < patternSize - 1; i++)
+    while (!pq.empty())
     {
-        w = (w * base) % mod;
-    }
-
-    for (int i = 0; i < patternSize; i++)
-    {
-        patternHash = (base * patternHash + pattern[i]) % mod;
-        textHash = (base * textHash + text[i]) % mod;
-    }
-
-    for (int i = 0; i <= textSize - patternSize; i++)
-    {
-        if (textHash == patternHash) 
+        uint64 vtx = pq.top().second;
+        pq.pop();
+        if (visited[vtx]) continue;
+        visited[vtx] = 1;
+        for (auto x : adj[vtx])
         {
-            bool flag = true;
-            for (int j = 0; j < patternSize; j++)
+            uint64 v = x.first;
+            uint64 weight = x.second;
+
+            if (dist[vtx] + weight < dist[v])
             {
-                if (pattern[j] != text[i + j])
-                {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag)
-            {
-                cout << "Found at index " << i << "\n";
+                dist[v] = dist[vtx] + weight;
+                pq.push({dist[v], v});
+                sources[v] = vtx;
             }
         }
-        if (i < textSize - patternSize)
-        {
-            textHash = (base * (textHash - text[i] * w) + text[i + patternSize]) % mod;
-            if (textHash < 0) textHash += mod;
-        }
+    }
+    if (dist[vertex] == inf)
+    {
+        cout << "-1";
+        return;
+    }
+    vector<int> path;
+    path.pb(vertex);
+    int index = vertex;
+    while (true)
+    {
+        index = sources[index];
+        path.pb(index);
+        if (index == 1) break;
+    }
+    for (int k = path.size() - 1; k >= 0; k--)
+    {
+        cout << path[k] << " ";
     }
 }
 
 int main()
 {
+    ios_base ::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cin >> vertex >> edge;
+    for (int k = 0; k < edge; k++)
+    {
+        int v1, v2, w;
+        cin >> v1 >> v2 >> w;
+        adj[v1].pb(make_pair(v2, w));
+        adj[v2].pb(make_pair(v1, w));
+    }
+    dijkstra();
+
     return 0;
 }
