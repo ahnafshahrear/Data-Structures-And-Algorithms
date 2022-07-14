@@ -1,1 +1,0 @@
-{"name":"Local: Dijkstra's Shortest Path","url":"f:\\C++ Codes\\Algorithms & Data Structures\\Dijkstra's Shortest Path.cpp","tests":[{"id":1657077700797,"input":"2 2\n1 2 1\n1 2 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\C++ Codes\\Algorithms & Data Structures\\Dijkstra's Shortest Path.cpp","group":"local","local":true}
