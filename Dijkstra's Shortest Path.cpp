@@ -2,37 +2,48 @@
 
 using namespace std;
 
+// Author: Ahnaf Shahrear Khan
+// Date: 15.06.2k22
+// Description: Find single source shortest path
+// Time Complexity: O
+
 typedef long long int int64;
-typedef unsigned long long uint64;
-typedef pair<uint64, uint64> uint64pair;
+typedef pair<int64, int64> int64pair;
 
 #define pb push_back
 
-const uint64 inf = 1e17;
-uint64 vertex, edge;
-vector<vector<uint64pair>> adj(1e5 + 1);
+const int64 inf = 1e17;
+int64 vertex, edge;
+vector<vector<int64pair>> adj(1e5 + 1);
 int source = 1;
 
 void dijkstra()
 {
-    priority_queue<uint64pair, vector<uint64pair>, greater<uint64pair>> pq;
-    vector<uint64> dist(1e5 + 1, inf), sources(1e5 + 1);
-    vector<bool> visited(1e5 + 1, false);
+    priority_queue<int64pair, vector<int64pair>, greater<int64pair>> pq;
     pq.push({0, source});
+
+    vector<int64> dist(1e5 + 1, inf), sources(1e5 + 1);
     dist[source] = 0;
+
+    vector<bool> visited(1e5 + 1, false);
 
     while (!pq.empty())
     {
-        uint64 vtx = pq.top().second;
+        int64 vtx = pq.top().second;
         pq.pop();
-        if (visited[vtx]) continue;
+
+        if (visited[vtx]) 
+        {
+            continue;
+        }
         visited[vtx] = 1;
+
         for (auto x : adj[vtx])
         {
-            uint64 v = x.first;
-            uint64 weight = x.second;
+            int64 v = x.first;
+            int64 weight = x.second;
 
-            if (dist[vtx] + weight < dist[v])
+            if ((dist[vtx] + weight) < dist[v])
             {
                 dist[v] = dist[vtx] + weight;
                 pq.push({dist[v], v});
@@ -45,15 +56,21 @@ void dijkstra()
         cout << "-1";
         return;
     }
-    vector<int> path;
-    path.pb(vertex);
+
+    vector<int64> path{vertex};
+
     int index = vertex;
     while (true)
     {
         index = sources[index];
         path.pb(index);
-        if (index == 1) break;
+        
+        if (index == 1)
+        {
+            break;
+        }
     }
+    
     for (int k = path.size() - 1; k >= 0; k--)
     {
         cout << path[k] << " ";
@@ -71,9 +88,7 @@ int main()
         int v1, v2, w;
         cin >> v1 >> v2 >> w;
         adj[v1].pb(make_pair(v2, w));
-        adj[v2].pb(make_pair(v1, w));
+        adj[v2].pb({v1, w});
     }
     dijkstra();
-
-    return 0;
 }

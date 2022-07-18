@@ -5,10 +5,10 @@ using namespace std;
 // Author: Ahnaf Shahrear Khan
 // Date: 02.06.2k22
 // Description: Merge sort algorithm
-// Time Complexity: O(nlogn)
+// Time Complexity: O(n*logn)
 
-int numbers[100000];
-int temp[10000];
+const int size = 1e5;
+int numbers[size], temp[size];
 
 void mergeSort(int lower, int upper)
 {
@@ -38,5 +38,6 @@ void mergeSort(int lower, int upper)
 
 int main()
 {
-    return 0;
+    int lower, upper;
+    mergeSort(lower, upper);
 }

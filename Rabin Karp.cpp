@@ -53,5 +53,6 @@ void rabinKarp(string text, string pattern)
 
 int main()
 {
-    return 0;
+    string text, pattern;
+    rabinKarp(text, pattern);
 }
