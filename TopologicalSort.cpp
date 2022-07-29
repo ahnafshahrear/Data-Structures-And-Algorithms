@@ -2,11 +2,6 @@
 
 using namespace std;
 
-// Author: Ahnaf Shahrear Khan
-// Date: 20.07.2k22
-// Description: 
-// Time Complexity: O
-
 typedef long long int int64;
 typedef unsigned long long int uint64;
 

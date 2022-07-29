@@ -2,20 +2,18 @@
 
 using namespace std;
 
-typedef long long int int64;
-typedef unsigned long long int uint64;
+// ahnafshahrearkhan@gmail.com
 
-#define pb push_back
-#define dsuSize 100000 // Size of the disjoint set
+#define dsuSize (int)1e4 // Size of the disjoint set
 
-int parent[dsuSize]; // Store every values representative
+int parent[dsuSize]; // Store every value's set parent/representative
 
-void MakeSet(int value) // Initially make a value as it's own parent
+void MakeSet(int value) 
 {
     parent[value] = value; 
 }
 
-int Find(int value) // Find the parent
+int Find(int value)
 {
     if (value == parent[value])
     {
@@ -33,12 +31,7 @@ void Union(int value1, int value2) // Union of two sets
     }
 }
 
-bool IsFriend(int value1, int value2) // Check if both belongs in the same set
+bool IsFriend(int value1, int value2)
 {
-    return Find(value1) == Find(value2);
-}
-
-int main()
-{
-    return 0;
+    return Find(value1) == Find(value2); 
 }
