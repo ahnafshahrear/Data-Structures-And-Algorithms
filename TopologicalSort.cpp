@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// ahnafshahrearkhan@gmail.com
+
 typedef long long int int64;
 typedef unsigned long long int uint64;
 
@@ -48,7 +50,7 @@ void topologicalSort()
         }
     }
 
-    for (auto node: order) // Print the sorted list
+    for (auto node: order) // Print the topological sorted list
     {
         cout << node << "\n";
     }

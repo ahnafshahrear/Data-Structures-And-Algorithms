@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// ahnafshahrearkhan@gmail.com
+
 const int size = 1e5; // Array size
 int numbers[size], temp[size];
 

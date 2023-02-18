@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -25,7 +25,6 @@ void bubbleSort()
                 swap(nums[j], nums[j + 1]);
             }
         }
-        
         if (!swapped) 
         {
             break;
@@ -36,4 +35,5 @@ void bubbleSort()
 int main()
 {
     bubbleSort();
+    return 0;
 }

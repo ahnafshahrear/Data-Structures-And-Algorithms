@@ -2,14 +2,13 @@
 
 using namespace std;
 
-// Ahnaf Shahrear Khan - RuCse27
+// ahnafshahrearkhan@gmail.com
 
 // Calculate the number of co-primes of n which are less then n
 // Co-prime means no common divisor
 
 // If p1, p2, p3... are primes factors of n, phi(n) = n * (1 - 1/p1) * (1 - 1/p2) * (1 - 1/p3)... 
 // If p is prime, then phi(p) = p - 1
-
 
 vector<int> phi(1e5 + 1), mark(1e5 + 1, 0);
 
