@@ -17,5 +17,8 @@ bool isPrime(int number)
 
 int main()
 {
-    cout << isPrime(7);
+    isPrime(269) ? cout << "The number is prime" : cout << "The number isn't prime";
 }
+
+//... Check whether a number is prime or not
+//... Time Complexity = o(√n)
