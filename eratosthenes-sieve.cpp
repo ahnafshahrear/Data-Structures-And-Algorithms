@@ -30,4 +30,4 @@ int main()
     cout << isPrime(269);
 }
 
-//... Time Complexity = o(n*log(log(n)))
+//... Time Complexity = O(n*log(log(n)))

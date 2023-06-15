@@ -5,9 +5,9 @@ using namespace std;
 bool isPrime(int number)
 {
     if (number < 2) return false;
-    for (int i = 2; i * i <= number; i++)
+    for (int x = 2; x * x <= number; x++)
     {
-        if (number % i == 0)
+        if (number % x == 0)
         {
             return false;
         }
@@ -21,4 +21,4 @@ int main()
 }
 
 //... Check whether a number is prime or not
-//... Time Complexity = o(√n)
+//... Time Complexity = O(√n)
