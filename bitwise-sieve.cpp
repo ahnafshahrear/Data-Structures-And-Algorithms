@@ -2,8 +2,9 @@
 
 using namespace std;
 
-#define on(x) (marked[x / 64] & (1 << ((x % 64) / 2)))
-#define mark(x) marked[x / 64] |= (1 << ((x % 64) / 2))
+#define offset(x) (1 << ((x % 64) / 2))
+#define on(x) (marked[x / 64] & offset(x))
+#define mark(x) (marked[x / 64] |= offset(x))
 
 int size = 1e6; //... Max possible total prime numbers
 vector<int> marked(size / 64 + 1, 0); 
@@ -13,7 +14,7 @@ void sieve(int range)
 {
     for (int x = 3; x * x <= range; x += 2)
     {
-        if (!on(x)) //... Number "x" is a prime number
+        if (on(x) == 0) //... Number "x" is a prime number
         {
             for (int k = x * x; k <= range; k += x + x)
             {
@@ -30,8 +31,9 @@ bool isPrime(int number)
 
 int main()
 {
-    sieve(1e5);
-    cout << isPrime(269);
+    sieve(1e5); //... Finds all the prime numbers from 1 to 100000
+    isPrime(269) ? cout << "The number is prime" : cout << "The number isn't prime";
 }
 
+//... Finds all the prime numbers from 1 to "range"
 //... Time Complexity = o(n*log(log(n)))
