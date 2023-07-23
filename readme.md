@@ -3,6 +3,13 @@
 - **Computer Science & Engineering, University of Rajshahi**
 
 ### Algorithms
-- **Searching algorithms:** 
-	- **(1) Linear Search**
-	- **(2) Binary Search**
+- **Searching:** 
+	- **Linear Search**
+	- **Binary Search**
+- **Sorting:** 
+	- **Bubble Sort**
+	- **Merge Sort**
+	- **Quick Sort**
+
+### Data Structures
+- **Linked List** 
