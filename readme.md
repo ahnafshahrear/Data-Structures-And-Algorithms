@@ -4,9 +4,9 @@
 
 ### Algorithms
 - **Searching:** 
-	- **(1) Linear Search (2) Binary Search**
+	- **(1) Linear search (2) Binary search**
 - **Sorting:** 
-	- **(1) Bubble Sort (2) Merge Sort (3) Quick Sort (4) Insertion Sort (5) Selection Sort (6) Heap sort**
+	- **(1) Bubble sort (2) Merge sort (3) Quick sort (4) Insertion sort (5) Selection sort (6) Heap sort**
 
 ### Data Structures
 - **Linked List** 
