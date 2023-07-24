@@ -48,10 +48,7 @@ int upperBound(vector<int> x, int target)
 
 int main()
 {
-    vector<int> numbers = {1, 4, 5, 7, 9, 13, 19, 24, 47};
+    vector<int> numbers = {1, 4, 7, 13, 24, 47};
     int target = 7;
     cout << binarySearch(numbers, target);
 }
-
-//... Monotonic Function: Maintains a given order such as, increasing or decreasing order
-//... Binary Search can only be applied on Monotonic Functions
