@@ -48,7 +48,7 @@ int upperBound(vector<int> x, int target)
 
 int main()
 {
-    vector<int> numbers = {1, 4, 7, 35, 47};
+    vector<int> numbers = {1, 4, 7, 69, 74};
     int target = 7;
     cout << binarySearch(numbers, target);
 }
