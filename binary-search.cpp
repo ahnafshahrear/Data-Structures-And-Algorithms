@@ -45,8 +45,3 @@ int upperBound(vector<int> &numbers, int target)
     else return -1;
 }
 //... Time Complexity: O[log(n)]
-
-int main()
-{
-    return 0;
-}
