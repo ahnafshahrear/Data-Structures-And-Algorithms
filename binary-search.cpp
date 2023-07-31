@@ -16,32 +16,10 @@ int binarySearch(vector<int> &numbers, int target)
 }
 //... Time Complexity: O[log(n)]
 
-int lowerBound(vector<int> &numbers, int target)
+int main()
 {
-    int low = 0, high = numbers.size() - 1;
-    while (high - low > 1)
-    {
-        int mid = (high + low) / 2;
-        if (numbers[mid] < target) low = mid + 1;
-        else high = mid;
-    }
-    if (numbers[low] >= target) return low;
-    else if (numbers[high] >= target) return high;
-    else return -1;
+    vector<int> numbers;
+    numbers = {24, 31, 74, 101, 143, 254};
+    int target = 101;
+    cout << binarySearch(numbers, target);
 }
-//... Time Complexity: O[log(n)]
-
-int upperBound(vector<int> &numbers, int target)
-{
-    int low = 0, high = numbers.size() - 1;
-    while (high - low > 1)
-    {
-        int mid = (high + low) / 2;
-        if (numbers[mid] <= target) low = mid + 1;
-        else high = mid;
-    }
-    if (numbers[low] > target) return low;
-    else if (numbers[high] > target) return high;
-    else return -1;
-}
-//... Time Complexity: O[log(n)]
