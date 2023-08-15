@@ -30,6 +30,7 @@ void mergeSort(int low, int high)
         numbers[k] = temp[k];
     }
 }
+//... Time Complexity: O[n*log(n)] 
 
 int main()
 {
