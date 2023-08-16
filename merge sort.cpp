@@ -2,19 +2,20 @@
 
 using namespace std;
 
-vector<int> numbers(1e5), temp(1e5);
-
-void mergeSort(int low, int high)
+void mergeSort(vector<int> &numbers, int low, int high)
 {
     if (low == high) //... That means only 1 element & already sorted
     {
         return;
     }
 
-    int mid = (low + high) / 2;
+    int mid = (low + high) / 2; //... To divide the vector into tow segments
 
-    mergeSort(low, mid);
-    mergeSort(mid + 1, high);
+    //... Calling mergeSort for the two segments divided by mid
+    mergeSort(numbers, low, mid);
+    mergeSort(numbers, mid + 1, high);
+
+    vector<int> temp(high + 1); //... Temporarily stores merged vector
 
     for (int i = low, j = mid + 1, k = low; k <= high; k++)
     {
@@ -35,9 +36,10 @@ void mergeSort(int low, int high)
 int main()
 {
     int size;
+    vector<int> numbers(size);
 
     //... Call mergeSort(a, b) to sort numbers[a...b]
-    mergeSort(0, size - 1); 
+    mergeSort(numbers, 0, size - 1); 
 
     return 0;
 }
