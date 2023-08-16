@@ -21,7 +21,7 @@ void mergeSort(vector<int> &numbers, int low, int high)
     {
         if (i == mid + 1) temp[k] = numbers[j++]; //... That means 1st segment is finished
         else if (j == high + 1) temp[k] = numbers[i++]; //... That means 2nd segment is finished
-        else if (numbers[i] < numbers[j]) temp[k] = numbers[i++];
+        else if (numbers[i] <= numbers[j]) temp[k] = numbers[i++];
         else temp[k] = numbers[j++];
     }
 
