@@ -35,19 +35,9 @@ void mergeSort(int low, int high)
 int main()
 {
     int size;
-    cin >> size;
-    for (int i = 0; i < size; i++)
-    {
-        cin >> numbers[i];
-    }
 
-    //... Call mergeSort(a, b) if you want to sort numbers[a...b]
+    //... Call mergeSort(a, b) to sort numbers[a...b]
     mergeSort(0, size - 1); 
-
-    for (int i = 0; i < size; i++)
-    {
-        cout << numbers[i] << " ";
-    }
 
     return 0;
 }
