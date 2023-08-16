@@ -38,7 +38,7 @@ int main()
     int size;
     vector<int> numbers(size);
 
-    //... Call mergeSort(a, b) to sort numbers[a...b]
+    //... Call mergeSort(numbers, a, b) to sort numbers[a...b]
     mergeSort(numbers, 0, size - 1); 
 
     return 0;
