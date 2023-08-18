@@ -10,7 +10,7 @@ bool solvable(vector<vector<char>> &board, int r, int c, char value)
         else if (board[k][c] == value) return false;
     }
 
-    int row = r - r % 3, column = c - c % 3; //... Starting index of the 3x3 sub-grid
+    int row = r - r % 3, column = c - c % 3; //... First index of the 3x3 sub-grid
 
     for (int i = row; i < row + 3; i++)
     {
