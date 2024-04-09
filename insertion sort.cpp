@@ -20,4 +20,4 @@ void insertionSort(vector<int> &numbers)
 }
 //... Function Parameter: vector<int> of some numbers
 //... This function sorts the original vector
-//... Time Complexity: O[n*n] 
+//... Time Complexity: O[n*n]
