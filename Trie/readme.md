@@ -12,9 +12,9 @@
 
 - **Trie data structure can be used to sort a collection of strings alphabetically as well as search whether a string with a given prefix is present in the trie or not.**
 
-- **Insertion, Searching, Deletion Time Complexity: `O[n]`**
+- **Insertion, Searching, Deletion Time Complexity: `O(n)`**
 
 - **Applications:**
-  - **Autocomplete Feature, Spell Checkers, Longest Prefix Matching Algorithm etc.**
+  - **Dictionaries, Autocomplete Features, Spell Checkers, Longest Prefix Matching Algorithms etc.**
 
-- **Learn more from [GeeksForGeeks Trie Data Structure](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/)**
+- **Learn more from [GeeksForGeeks Trie Data Structure Tutorial](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/)**
