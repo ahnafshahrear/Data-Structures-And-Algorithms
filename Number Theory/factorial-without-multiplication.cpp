@@ -13,13 +13,13 @@ int factorial(int number, int x)
     }
     int ans = 0;
 
-    for (int k = 1; k <= x; k++)
+    for (int k = 0; k < x; k++)
     {
         ans += number;
     }
     return factorial(ans, x - 1);
 }
-//... Time Complexity = O[n * (n - 1) / 2]
+//... Time Complexity = O[n * n]
 
 int main()
 {
