@@ -35,6 +35,7 @@ void mergeSort(vector<int>& numbers, int low, int high) {
 int main() {
     int size;
     cin >> size; 
+    
     vector<int> numbers(size);
 
     for (int i = 0; i < size; i++) {
