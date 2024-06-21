@@ -1,4 +1,4 @@
-# Bubble Sort Algorithm
+# Bubble Sort
 *[Ahnaf Shahrear Khan](https://github.com/ahnafshahrear) - Computer Science & Engineering, University of Rajshahi*
 
 - **Time Complexity is `O[n*n]` & Space Complexity is `O[1]`**
