@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sort(vector<int>& numbers) {
+void insertionSort(vector<int>& numbers) {
     // Number before ith index is already sorted after each iteration
     for (int i = 1; i < numbers.size(); i++) {
         int k = i; // The numbers[k] will be inserted before kth index which is already sorted
@@ -23,7 +23,7 @@ int main() {
     for (int i = 0; i < size; i++) {
         cin >> numbers[i];
     }
-    sort(numbers);
+    insertionSort(numbers);
 
     for (int i = 0; i < size; i++) {
         cout << numbers[i] << " ";
