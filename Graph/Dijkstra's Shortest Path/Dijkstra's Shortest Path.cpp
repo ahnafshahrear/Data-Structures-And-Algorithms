@@ -9,8 +9,8 @@ void dijkstra(int nodes, vector<vector<pair<int, int>>>& graph, int source, int 
     pq.push({0, source}); //... Start with the source node
 
     int inf = 1e5;
-    vector<int> distances(nodes, inf); //... To store the minimum distance from source to each node
-    //... Initially distance from source to other nodes are infinite
+    vector<int> distances(nodes, inf); //... To store the minimum distance from the source to each node
+    //... Initially distances from the source to other nodes are infinite
     vector<int> sources(nodes, -1); //... To store the predecessor of each node
 
     distances[source] = 0; //... Distance from source to itself is 0
@@ -20,16 +20,16 @@ void dijkstra(int nodes, vector<vector<pair<int, int>>>& graph, int source, int 
         pq.pop();
 
         for (auto edge : graph[node]) {
-            int neighbor = edge.first, weight = edge.second;
+            int neighbour = edge.first, weight = edge.second;
 
             //... Path Relaxation: 
-            //... If the path through the current node offers a shorter path to the neighbor, update it
-            if (distances[node] + weight < distances[neighbor]) { 
-                distances[neighbor] = distances[node] + weight;
-                pq.push({distances[neighbor], neighbor});
-                sources[neighbor] = node; //... Update the predecessor of the neighbor
+            //... If the path through the current node offers a shorter path to the neighbour, update it
+            if (distances[node] + weight < distances[neighbour]) { 
+                distances[neighbour] = distances[node] + weight;
+                pq.push({distances[neighbour], neighbour});
+                sources[neighbour] = node; //... Update the predecessor of the neighbor
                 //... We are not breaking the loop when (neighbour == destination)
-                //... That means we are computing minimum cost from "source" to every nodes 
+                //... That means we are computing the minimum cost from the source to other nodes
             }
         }
     }
@@ -37,10 +37,10 @@ void dijkstra(int nodes, vector<vector<pair<int, int>>>& graph, int source, int 
         cout << "There is no path from source to destination!";
         return;
     }
-    vector<int> path; //... To store path from destination to source
+    vector<int> path; //... To store the path from destination to source
     int parent = destination;
 
-    while (parent != -1) { //... The source of parent is -1
+    while (parent != -1) { //... The source of the parent is -1
         path.push_back(parent);
         parent = sources[parent];
     }
@@ -51,7 +51,7 @@ void dijkstra(int nodes, vector<vector<pair<int, int>>>& graph, int source, int 
         cout << path[i] << " ";
     }
 }
-//... Time Complexity is O[V*log(V) + E] where V is number of nodes & E is number of edges
+//... Time Complexity is O[V*log(V) + E] where V is the number of nodes & E is the number of edges
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -69,7 +69,7 @@ int main() {
         graph[node2].push_back({node1, weight});
     }
     int source, destination;
-    cin >> source >> destination; //... Input the source & destination node
+    cin >> source >> destination; //... Input the source node & the destination node
 
     dijkstra(nodes, graph, source, destination);
 
