@@ -3,10 +3,10 @@
 using namespace std;
 
 void insertionSort(vector<int>& numbers) {
-    //... Numbers before the ith index are already sorted
+    //... The number before the i'th index is already sorted
     for (int i = 1; i < numbers.size(); i++) {
         int k = i;
-        //... Inserting numbers[k] before kth index in the appropriate position
+        //... Inserting numbers[k] before k'th index in the appropriate position
         while (k > 0 and numbers[k] < numbers[k - 1]) {
             swap(numbers[k], numbers[k - 1]);
             k--;
