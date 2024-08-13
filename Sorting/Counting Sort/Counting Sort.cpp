@@ -13,8 +13,8 @@ void countingSort(vector<int>& numbers) {
     for (int n : numbers) {
         count[n]++;
     }
-    for (int i = 1; i < count.size(); i++) { //... Prefix sum of count array
-        count[i] += count[i - 1];
+    for (int i = 1; i < count.size(); i++) { 
+        count[i] += count[i - 1]; //... Prefix sum of count array
     }
     vector<int> inputs = numbers;
 
