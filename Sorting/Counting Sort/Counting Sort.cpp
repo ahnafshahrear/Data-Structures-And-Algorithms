@@ -13,12 +13,14 @@ void countingSort(vector<int>& numbers) {
     for (int n : numbers) {
         count[n]++;
     }
-    int i = 0;
+    for (int i = 1; i < count.size(); i++) { //... Prefix sum of count array
+        count[i] += count[i - 1];
+    }
+    vector<int> inputs = numbers;
 
-    for (int n = 0; n <= largest; n++) {
-        for (int k = 0; k < count[n]; k++) {
-            numbers[i++] = n;
-        }
+    for (int i = numbers.size() - 1; i >= 0; i--) {
+        count[inputs[i]]--;
+        numbers[count[inputs[i]]] = inputs[i];
     }
 }
 //... Time Complexity is O[n + m] where n and m are the size of input & count array 
