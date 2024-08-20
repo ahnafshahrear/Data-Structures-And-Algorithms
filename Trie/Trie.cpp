@@ -89,6 +89,7 @@ public:
         return true; //... Means all characters are found
     }
 };
+//... Time Complexity of insert, search & prefix-search is O[n] where n is the size of the word 
 
 int main() {
     ios_base::sync_with_stdio(false);
